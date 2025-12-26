@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEBPLC - Credit Card Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo-container">
+                <img src="logo.jpg" alt="Southeast Bank Logo" class="seblogo">
+            </div>
+            <div class="header-text">APPLICATION FOR CREDIT CARD</div>
+        </header>
+
+        <div class="campaign-banner">
+            Apply for 1st Year Annual Fee Free Campaign
+        </div>
+
+        <div class="form-container">
+            <h1>Credit Card Application Form</h1>
+
+            <div class="info-box">
+                <p><i class="fas fa-info-circle"></i> Please fill in all required fields accurately. All information
+                    will be kept confidential.</p>
+            </div>
+
+            <div class="error-message" id="error-message">
+                <i class="fas fa-exclamation-circle"></i> <span id="error-text">An error occurred. Please try
+                    again.</span>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Submitting your application...</p>
+            </div>
+
+            <form id="application-form">
+                <div class="form-group">
+                    <label for="fullName" class="required">Full Name</label>
+                    <input type="text" id="fullName" required
+                        placeholder="Enter your full name as per official documents">
+                </div>
+
+                <div class="form-group">
+                    <label for="cellPhone" class="required">Contact Number</label>
+                    <input type="tel" id="cellPhone" required pattern="01[3-9]\d{8}" maxlength="11"
+                        placeholder="01XXXXXXXXX">
+                    <div class="phone-validation" id="phone-validation">Must be a valid 11-digit Bangladeshi mobile
+                        number starting with 01</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="profession" class="required">Please select your profession</label>
+                    <select id="profession" required>
+                        <option value="" disabled selected>Select your profession</option>
+                        <option value="Salaried Executive/Professional">Salaried Executive/Professional</option>
+                        <option value="Self-employed Professional">Self-employed Professional</option>
+                        <option value="Business Person">Business Person</option>
+                        <option value="Landlord/Landlady">Landlord/Landlady</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="organizationName" class="required">Organization Name</label>
+                    <input type="text" id="organizationName" required placeholder="Enter your organization name">
+                </div>
+
+                <div class="form-group">
+                    <label for="income" class="required">Your gross fixed monthly income in BDT</label>
+                    <select id="income" required>
+                        <option value="" disabled selected>Select monthly income range</option>
+                        <option value="25,000-49,999">25,000 - 49,999</option>
+                        <option value="50,000-99,999">50,000 - 99,999</option>
+                        <option value="1,00,000-Above">1,00,000 & Above</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="organizationAddress" class="required">Organization Address</label>
+                    <textarea id="organizationAddress" rows="3" required
+                        placeholder="Enter complete organization address"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="division" class="required">Please choose the division where your job/business is
+                        located</label>
+                    <select id="division" required>
+                        <option value="" disabled selected>Select division</option>
+                        <option value="Dhaka">Dhaka</option>
+                        <option value="Chattogram">Chattogram</option>
+                        <option value="Rajshahi">Rajshahi</option>
+                        <option value="Khulna">Khulna</option>
+                        <option value="Barisal">Barisal</option>
+                        <option value="Sylhet">Sylhet</option>
+                        <option value="Rangpur">Rangpur</option>
+                        <option value="Mymensingh">Mymensingh</option>
+                    </select>
+                </div>
+
+                <div class="footer-box">
+                    <i class="fas fa-lock"></i> Your information is secure and will only be used for processing your
+                    application
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn-primary" id="submit-button">Submit Application</button>
+                </div>
+            </form>
+
+            <!-- Success Card at the end of the form -->
+            <div class="success-card" id="success-card">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Application Submitted Successfully!</h2>
+                <p>Thank you for applying for a Southeast Bank Credit Card.</p>
+                <p>We have received your application and will process it shortly.</p>
+
+                <div style="margin-top: 25px;">
+                    <button class="btn-primary" id="new-application-btn"
+                        style="background: white; color: #2ecc71; width: auto; padding: 12px 30px;">
+                        <i class="fas fa-plus-circle"></i> Submit Another Application
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
